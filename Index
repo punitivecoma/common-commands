@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Tasks Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .dropdown {
+            margin: 10px 0;
+        }
+        .dropdown select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .command {
+            display: none;
+            background: #eaeaea;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        button {
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Common Command Tasks</h1>
+    <div class="dropdown">
+        <label for="commands">Select a command:</label>
+        <select id="commands" onchange="showCommand()">
+            <option value="">--Select a Command--</option>
+            <option value="cmd1">Command 1</option>
+            <option value="cmd2">Command 2</option>
+            <option value="cmd3">Command 3</option>
+        </select>
+    </div>
+    
+    <div id="cmd1" class="command">
+        <h2>Command 1</h2>
+        <p>This command does XYZ.</p>
+        <code>your-command-1-here</code>
+        <button onclick="copyToClipboard('your-command-1-here')">Copy</button>
+    </div>
+    
+    <div id="cmd2" class="command">
+        <h2>Command 2</h2>
+        <p>This command does ABC.</p>
+        <code>your-command-2-here</code>
+        <button onclick="copyToClipboard('your-command-2-here')">Copy</button>
+    </div>
+
+    <div id="cmd3" class="command">
+        <h2>Command 3</h2>
+        <p>This command does DEF.</p>
+        <code>your-command-3-here</code>
+        <button onclick="copyToClipboard('your-command-3-here')">Copy</button>
+    </div>
+
+    <script>
+        function showCommand() {
+            // Hide all command divs
+            const commands = document.querySelectorAll('.command');
+            commands.forEach(cmd => cmd.style.display = 'none');
+
+            // Get selected command
+            const dropdown = document.getElementById('commands');
+            const selectedValue = dropdown.value;
+
+            // Show the selected command if not empty
+            if (selectedValue) {
+                document.getElementById(selectedValue).style.display = 'block';
+            }
+        }
+
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('Command copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
