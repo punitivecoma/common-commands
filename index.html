@@ -40,18 +40,28 @@
         <label for="commands">Select a command:</label>
         <select id="commands" onchange="showCommand()">
             <option value="">--Select a Command--</option>
-            <option value="cmd1">Command 1</option>
+            <option value="cmd1">DISM /Online /Cleanup-Image /RestoreHealth & sfc /scannow</option>
             <option value="cmd2">Command 2</option>
             <option value="cmd3">Command 3</option>
         </select>
     </div>
     
     <div id="cmd1" class="command">
-        <h2>Command 1</h2>
-        <p>This command does XYZ.</p>
-        <code>your-command-1-here</code>
-        <button onclick="copyToClipboard('your-command-1-here')">Copy</button>
+    <h2>Repair Commands</h2>
+    <p>The sequence of running <code>DISM /Online /Cleanup-Image /RestoreHealth</code> followed by <code>sfc /scannow</code> creates a robust strategy for repairing Windows installations. It first fixes potential damage at the source before verifying and restoring the integrity of essential system files. This approach maximizes the chances of resolving errors and enhances system stability.</p>
+    
+    <div>
+        <h3>DISM Command</h3>
+        <code id="dismCommand">DISM /Online /Cleanup-Image /RestoreHealth</code>
+        <button onclick="copyToClipboard('DISM /Online /Cleanup-Image /RestoreHealth', this)">Copy DISM Command <span class="checkmark" id="dismCheck" style="display: none;">✓</span></button>
     </div>
+    
+    <div>
+        <h3>SFC Command</h3>
+        <code id="sfcCommand">sfc /scannow</code>
+        <button onclick="copyToClipboard('sfc /scannow', this)">Copy SFC Command <span class="checkmark" id="sfcCheck" style="display: none;">✓</span></button>
+    </div>
+</div>
     
     <div id="cmd2" class="command">
         <h2>Command 2</h2>
@@ -66,6 +76,8 @@
         <code>your-command-3-here</code>
         <button onclick="copyToClipboard('your-command-3-here')">Copy</button>
     </div>
+
+ <h5>By Darryl Rimer | 2025</h5>
 
     <script>
         function showCommand() {
@@ -83,14 +95,22 @@
             }
         }
 
-        function copyToClipboard(text) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            alert('Command copied to clipboard!');
+        function copyToClipboard(text, button) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        // Display checkmark next to the button
+        const checkmark = button.querySelector('.checkmark');
+        checkmark.style.display = 'inline';
+        
+        // Optional: Hide the checkmark after 2 seconds
+        setTimeout(() => {
+            checkmark.style.display = 'none';
+        }, 2000);
         }
     </script>
 </body>
