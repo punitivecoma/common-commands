@@ -40,12 +40,23 @@
         <label for="commands">Select a command:</label>
         <select id="commands" onchange="showCommand()">
             <option value="">--Select a Command--</option>
+            <option value="cmd4">Built-in Windows Tools</option>
             <option value="cmd1">DISM /Online /Cleanup-Image /RestoreHealth & sfc /scannow</option>
             <option value="cmd2">Networking Commands</option>
             <option value="cmd3">Troubleshooting Windows Update Errors</option>
-            <option value="cmd4">Built-in Windows Tools</option>
         </select>
     </div>
+
+    <!-- Welcome Message Div -->
+<div id="welcomeMessage" style="display: block;">
+    <h2>Welcome to the Command Prompt Resource</h2>
+    <p>Explore our curated collection of essential command prompt commands designed to enhance your productivity and streamline your troubleshooting processes.</p>
+    <h2>Navigate with Ease</h2>
+    <p><strong>Built-in Windows Tools:</strong> Use commands that display running processes, services, and performance metrics and open various Windows tools and utilities directly from the command line.</p>
+    <p><strong>DISM /Online /Cleanup-Image /RestoreHealth & sfc /scannow:</strong> The correct order of running each command which creates a robust strategy for repairing Windows installations.</p>
+    <p><strong>Network Tools:</strong> Access commands for network diagnostics, connectivity testing, and configuration details.</p>
+    <p><strong>Troubleshooting Windows Update Errors:</strong> These commands can be utilized in the specified order to effectively resolve Windows Update errors.</p>
+</div>
     
     <div id="cmd1" class="command">
         <h2>Repair Commands</h2>
@@ -303,19 +314,30 @@
 
     <script>
         function showCommand() {
-            // Hide all command divs
-            const commands = document.querySelectorAll('.command');
-            commands.forEach(cmd => cmd.style.display = 'none');
+    // Hide all command divs
+    const commands = document.querySelectorAll('.command');
+    commands.forEach(cmd => cmd.style.display = 'none');
 
-            // Get selected command
-            const dropdown = document.getElementById('commands');
-            const selectedValue = dropdown.value;
+    // Get selected command
+    const dropdown = document.getElementById('commands');
+    const selectedValue = dropdown.value;
+    
+    // Get the welcome message div
+    const welcomeMessage = document.getElementById('welcomeMessage');
 
-            // Show the selected command if not empty
-            if (selectedValue) {
-                document.getElementById(selectedValue).style.display = 'block';
-            }
-        }
+    // Show the selected command or welcome message
+    if (selectedValue === "") {
+        welcomeMessage.style.display = 'block'; // Show welcome message
+    } else {
+        welcomeMessage.style.display = 'none'; // Hide welcome message
+        document.getElementById(selectedValue).style.display = 'block'; // Show selected command
+    }
+}
+
+// Call the function on page load
+window.onload = function() {
+    showCommand();
+};
 
         function copyToClipboard(text, button) {
             const textarea = document.createElement('textarea');
