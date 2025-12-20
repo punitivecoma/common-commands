@@ -64,20 +64,82 @@
         </div>
     </div>
     
-    <div id="cmd2" class="command">
-        <h2>Networking Commands</h2>
-        <p>The command prompt commands related to networking are powerful tools for managing, testing, and troubleshooting network configurations. Here’s a breakdown of some common network commands in Windows, along with their purposes:</p>
+<div id="cmd2" class="command">
+    <h2>Networking Commands</h2>
+    <p>The command prompt commands related to networking are powerful tools for managing, testing, and troubleshooting network configurations. Here’s a breakdown of some common network commands in Windows, along with their purposes:</p>
 
-        <div>
-            <h3>1. IP Configuration</h3>
-            <p><strong>Purpose:</strong> Displays the current IP configuration for all network interfaces.</p>
-            <p><strong>Usage:</strong> <code>ipconfig /all</code> shows detailed information including the IP address, subnet mask, and default gateway.</p>
-            <code id="ipconfigCommand">ipconfig /all</code>
-            <button onclick="copyToClipboard('ipconfig /all', this)">Copy IP Configuration <span class="checkmark" id="ipconfigCheck" style="display: none;">✓</span></button>
-        </div>
-        
-        <!-- Additional Networking Commands Here -->
+    <div>
+        <h3>1. IP Configuration</h3>
+        <p><strong>Purpose:</strong> Displays the current IP configuration for all network interfaces.</p>
+        <p><strong>Usage:</strong> <code>ipconfig /all</code> shows detailed information including the IP address, subnet mask, and default gateway.</p>
+        <code id="ipconfigCommand">ipconfig /all</code>
+        <button onclick="copyToClipboard('ipconfig /all', this)">Copy IP Configuration <span class="checkmark" id="ipconfigCheck" style="display: none;">✓</span></button>
     </div>
+    
+    <div>
+        <h3>2. Flush DNS</h3>
+        <p><strong>Purpose:</strong> Clears the DNS resolver cache to resolve DNS-related issues.</p>
+        <p><strong>Usage:</strong> <code>ipconfig /flushdns</code> clears the DNS cache, which can help fix problems accessing websites.</p>
+        <code id="flushdnsCommand">ipconfig /flushdns</code>
+        <button onclick="copyToClipboard('ipconfig /flushdns', this)">Copy Flush DNS Command <span class="checkmark" id="flushdnsCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>3. Ping Command</h3>
+        <p><strong>Purpose:</strong> Tests connectivity between your computer and another network device.</p>
+        <p><strong>Usage:</strong> <code>ping [hostname/IP]</code> sends packets to the specified address to check if it’s reachable.</p>
+        <code id="pingCommand">ping google.com</code>
+        <button onclick="copyToClipboard('ping google.com', this)">Copy Ping Command <span class="checkmark" id="pingCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>4. Tracert Command</h3>
+        <p><strong>Purpose:</strong> Traces the route packets take to a specified destination.</p>
+        <p><strong>Usage:</strong> <code>tracert [hostname/IP]</code> shows each hop along the route to the target.</p>
+        <code id="tracertCommand">tracert google.com</code>
+        <button onclick="copyToClipboard('tracert google.com', this)">Copy Tracert Command <span class="checkmark" id="tracertCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>5. Netstat Command</h3>
+        <p><strong>Purpose:</strong> Displays active network connections and listening ports.</p>
+        <p><strong>Usage:</strong> <code>netstat -ano</code> shows connections with associated Process IDs (PIDs).</p>
+        <code id="netstatCommand">netstat -a</code>
+        <button onclick="copyToClipboard('netstat -a', this)">Copy Netstat Command <span class="checkmark" id="netstatCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>6. Nslookup Command</h3>
+        <p><strong>Purpose:</strong> Queries DNS to obtain the domain name or IP address mapping.</p>
+        <p><strong>Usage:</strong> <code>nslookup [domain name]</code> retrieves the IP address for a specified domain.</p>
+        <code id="nslookupCommand">nslookup example.com</code>
+        <button onclick="copyToClipboard('nslookup example.com', this)">Copy Nslookup Command <span class="checkmark" id="nslookupCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>7. Route Command</h3>
+        <p><strong>Purpose:</strong> Displays and modifies the IP routing table.</p>
+        <p><strong>Usage:</strong> <code>route print</code> shows current network routes; <code>route add [destination] [mask] [gateway]</code> creates a new route.</p>
+        <code id="routeCommand">route print</code>
+        <button onclick="copyToClipboard('route print', this)">Copy Route Command <span class="checkmark" id="routeCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>8. ARP Command</h3>
+        <p><strong>Purpose:</strong> Displays and modifies the ARP (Address Resolution Protocol) cache.</p>
+        <p><strong>Usage:</strong> <code>arp -a</code> shows the current ARP entries.</p>
+        <code id="arpCommand">arp -a</code>
+        <button onclick="copyToClipboard('arp -a', this)">Copy ARP Command <span class="checkmark" id="arpCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>9. Netsh Command</h3>
+        <p><strong>Purpose:</strong> A versatile command for managing network configurations.</p>
+        <p><strong>Usage:</strong> <code>netsh interface show interface</code> displays the status of network interfaces.</p>
+        <code id="netshCommand">netsh interface show interface</code>
+        <button onclick="copyToClipboard('netsh interface show interface', this)">Copy Netsh Command <span class="checkmark" id="netshCheck" style="display: none;">✓</span></button>
+    </div>
+</div></div>
 
     <div id="cmd3" class="command">
         <h2>Troubleshooting Windows Update Errors</h2>
@@ -99,184 +161,184 @@
     </div>
 
     <div id="cmd4" class="command">
-        <h2>Built-in Windows Tools</h2>
-        <p>Windows provides a variety of built-in tools for system management, troubleshooting, and configuration. Use the following commands to access these useful utilities:</p>
+    <h2>Built-in Windows Tools</h2>
+    <p>Windows provides a variety of built-in tools for system management, troubleshooting, and configuration. Use the following commands to access these useful utilities:</p>
 
-        <div>
-            <h3>System Information</h3>
-            <p><strong>Command:</strong> <code>systeminfo</code></p>
-            <p><strong>Description:</strong> Displays detailed system information.</p>
-            <button onclick="copyToClipboard('systeminfo', this)">Copy System Information Command <span class="checkmark" id="systeminfoCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>IP Configuration</h3>
-            <p><strong>Command:</strong> <code>ipconfig</code></p>
-            <p><strong>Description:</strong> Displays the current IP configuration for all network interfaces.</p>
-            <button onclick="copyToClipboard('ipconfig', this)">Copy IP Configuration Command <span class="checkmark" id="ipconfigCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>List Running Processes</h3>
-            <p><strong>Command:</strong> <code>tasklist</code></p>
-            <p><strong>Description:</strong> Lists all currently running processes.</p>
-            <button onclick="copyToClipboard('tasklist', this)">Copy Tasklist Command <span class="checkmark" id="tasklistCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>User Accounts</h3>
-            <p><strong>Command:</strong> <code>net user</code></p>
-            <p><strong>Description:</strong> Displays all user accounts on the system.</p>
-            <button onclick="copyToClipboard('net user', this)">Copy User Accounts Command <span class="checkmark" id="userCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Disk Usage</h3>
-            <p><strong>Command:</strong> <code>wmic logicaldisk get size,freespace,caption</code></p>
-            <p><strong>Description:</strong> Shows used and free disk space on all drives.</p>
-            <button onclick="copyToClipboard('wmic logicaldisk get size,freespace,caption', this)">Copy Disk Usage Command <span class="checkmark" id="diskUsageCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Current Active Sessions</h3>
-            <p><strong>Command:</strong> <code>query user</code></p>
-            <p><strong>Description:</strong> Lists user sessions on the local machine.</p>
-            <button onclick="copyToClipboard('query user', this)">Copy Current Active Sessions Command <span class="checkmark" id="queryUserCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Device Manager</h3>
-            <p><strong>Command:</strong> <code>devmgmt.msc</code></p>
-            <p><strong>Description:</strong> Opens the Device Manager.</p>
-            <button onclick="copyToClipboard('devmgmt.msc', this)">Copy Device Manager Command <span class="checkmark" id="devmgmtCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Task Manager</h3>
-            <p><strong>Command:</strong> <code>taskmgr</code></p>
-            <p><strong>Description:</strong> Opens the Task Manager.</p>
-            <button onclick="copyToClipboard('taskmgr', this)">Copy Task Manager Command <span class="checkmark" id="taskmgrCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Event Viewer</h3>
-            <p><strong>Command:</strong> <code>eventvwr</code></p>
-            <p><strong>Description:</strong> Opens the Event Viewer.</p>
-            <button onclick="copyToClipboard('eventvwr', this)">Copy Event Viewer Command <span class="checkmark" id="eventvwrCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Control Panel</h3>
-            <p><strong>Command:</strong> <code>control</code></p>
-            <p><strong>Description:</strong> Opens the Control Panel.</p>
-            <button onclick="copyToClipboard('control', this)">Copy Control Panel Command <span class="checkmark" id="controlCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>System Configuration</h3>
-            <p><strong>Command:</strong> <code>msconfig</code></p>
-            <p><strong>Description:</strong> Opens the System Configuration tool.</p>
-            <button onclick="copyToClipboard('msconfig', this)">Copy System Configuration Command <span class="checkmark" id="msconfigCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Performance Monitor</h3>
-            <p><strong>Command:</strong> <code>perfmon</code></p>
-            <p><strong>Description:</strong> Opens the Performance Monitor.</p>
-            <button onclick="copyToClipboard('perfmon', this)">Copy Performance Monitor Command <span class="checkmark" id="perfmonCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Windows Update</h3>
-            <p><strong>Command:</strong> <code>wuapp</code></p>
-            <p><strong>Description:</strong> Opens Windows Update settings.</p>
-            <button onclick="copyToClipboard('wuapp', this)">Copy Windows Update Command <span class="checkmark" id="wuappCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Registry Editor</h3>
-            <p><strong>Command:</strong> <code>regedit</code></p>
-            <p><strong>Description:</strong> Opens the Windows Registry Editor.</p>
-            <button onclick="copyToClipboard('regedit', this)">Copy Registry Editor Command <span class="checkmark" id="regeditCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Disk Cleanup</h3>
-            <p><strong>Command:</strong> <code>cleanmgr</code></p>
-            <p><strong>Description:</strong> Opens the Disk Cleanup tool.</p>
-            <button onclick="copyToClipboard('cleanmgr', this)">Copy Disk Cleanup Command <span class="checkmark" id="cleanmgrCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Windows Security</h3>
-            <p><strong>Command:</strong> <code>windowsdefender:</code></p>
-            <p><strong>Description:</strong> Opens Windows Security settings.</p>
-            <button onclick="copyToClipboard('windowsdefender:', this)">Copy Windows Security Command <span class="checkmark" id="windowsdefenderCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Group Policy Editor (Pro editions)</h3>
-            <p><strong>Command:</strong> <code>gpedit.msc</code></p>
-            <p><strong>Description:</strong> Opens the Group Policy Editor.</p>
-            <button onclick="copyToClipboard('gpedit.msc', this)">Copy Group Policy Editor Command <span class="checkmark" id="gpeditCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Services</h3>
-            <p><strong>Command:</strong> <code>services.msc</code></p>
-            <p><strong>Description:</strong> Opens the Services management console.</p>
-            <button onclick="copyToClipboard('services.msc', this)">Copy Services Command <span class="checkmark" id="servicesCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Windows Memory Diagnostic</h3>
-            <p><strong>Command:</strong> <code>mdsched</code></p>
-            <p><strong>Description:</strong> Opens the Windows Memory Diagnostic tool.</p>
-            <button onclick="copyToClipboard('mdsched', this)">Copy Memory Diagnostic Command <span class="checkmark" id="mdschedCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Resource Monitor</h3>
-            <p><strong>Command:</strong> <code>resmon</code></p>
-            <p><strong>Description:</strong> Opens Resource Monitor for monitoring system performance.</p>
-            <button onclick="copyToClipboard('resmon', this)">Copy Resource Monitor Command <span class="checkmark" id="resmonCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Command Prompt as Administrator</h3>
-            <p><strong>Command:</strong> <code>cmd followed by runas /user:Administrator cmd</code></p>
-            <p><strong>Description:</strong> Opens Command Prompt with administrative privileges.</p>
-            <button onclick="copyToClipboard('cmd && runas /user:Administrator cmd', this)">Copy Admin Command Prompt Command <span class="checkmark" id="adminCmdCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>System Information Utility</h3>
-            <p><strong>Command:</strong> <code>msinfo32</code></p>
-            <p><strong>Description:</strong> Displays comprehensive hardware and software details.</p>
-            <button onclick="copyToClipboard('msinfo32', this)">Copy System Information Utility Command <span class="checkmark" id="msinfo32Check" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Network Connections</h3>
-            <p><strong>Command:</strong> <code>ncpa.cpl</code></p>
-            <p><strong>Description:</strong> Opens Network Connections control panel.</p>
-            <button onclick="copyToClipboard('ncpa.cpl', this)">Copy Network Connections Command <span class="checkmark" id="ncpaCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>Windows Features</h3>
-            <p><strong>Command:</strong> <code>optionalfeatures</code></p>
-            <p><strong>Description:</strong> Opens the Windows Features dialog.</p>
-            <button onclick="copyToClipboard('optionalfeatures', this)">Copy Windows Features Command <span class="checkmark" id="optionalfeaturesCheck" style="display: none;">✓</span></button>
-        </div>
-
-        <div>
-            <h3>DirectX Diagnostic Tool</h3>
-            <p><strong>Command:</strong> <code>dxdiag</code></p>
-            <p><strong>Description:</strong> Opens the DirectX Diagnostic Tool.</p>
-            <button onclick="copyToClipboard('dxdiag', this)">Copy DirectX Diagnostic Command <span class="checkmark" id="dxdiagCheck" style="display: none;">✓</span></button>
-        </div>
+    <div>
+        <h3>System Information</h3>
+        <p><strong>Command:</strong> <code>systeminfo</code></p>
+        <p><strong>Description:</strong> Displays detailed system information.</p>
+        <button onclick="copyToClipboard('systeminfo', this)">Copy System Information Command <span class="checkmark" id="systeminfoCheck" style="display: none;">✓</span></button>
     </div>
+
+    <div>
+        <h3>IP Configuration</h3>
+        <p><strong>Command:</strong> <code>ipconfig</code></p>
+        <p><strong>Description:</strong> Displays the current IP configuration for all network interfaces.</p>
+        <button onclick="copyToClipboard('ipconfig', this)">Copy IP Configuration Command <span class="checkmark" id="ipconfigCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>List Running Processes</h3>
+        <p><strong>Command:</strong> <code>tasklist</code></p>
+        <p><strong>Description:</strong> Lists all currently running processes.</p>
+        <button onclick="copyToClipboard('tasklist', this)">Copy Tasklist Command <span class="checkmark" id="tasklistCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>User Accounts</h3>
+        <p><strong>Command:</strong> <code>net user</code></p>
+        <p><strong>Description:</strong> Displays all user accounts on the system.</p>
+        <button onclick="copyToClipboard('net user', this)">Copy User Accounts Command <span class="checkmark" id="userCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Disk Usage</h3>
+        <p><strong>Command:</strong> <code>wmic logicaldisk get size,freespace,caption</code></p>
+        <p><strong>Description:</strong> Shows used and free disk space on all drives.</p>
+        <button onclick="copyToClipboard('wmic logicaldisk get size,freespace,caption', this)">Copy Disk Usage Command <span class="checkmark" id="diskUsageCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Current Active Sessions</h3>
+        <p><strong>Command:</strong> <code>query user</code></p>
+        <p><strong>Description:</strong> Lists user sessions on the local machine.</p>
+        <button onclick="copyToClipboard('query user', this)">Copy Current Active Sessions Command <span class="checkmark" id="queryUserCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Device Manager</h3>
+        <p><strong>Command:</strong> <code>devmgmt.msc</code></p>
+        <p><strong>Description:</strong> Opens the Device Manager.</p>
+        <button onclick="copyToClipboard('devmgmt.msc', this)">Copy Device Manager Command <span class="checkmark" id="devmgmtCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Task Manager</h3>
+        <p><strong>Command:</strong> <code>taskmgr</code></p>
+        <p><strong>Description:</strong> Opens the Task Manager.</p>
+        <button onclick="copyToClipboard('taskmgr', this)">Copy Task Manager Command <span class="checkmark" id="taskmgrCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Event Viewer</h3>
+        <p><strong>Command:</strong> <code>eventvwr</code></p>
+        <p><strong>Description:</strong> Opens the Event Viewer.</p>
+        <button onclick="copyToClipboard('eventvwr', this)">Copy Event Viewer Command <span class="checkmark" id="eventvwrCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Control Panel</h3>
+        <p><strong>Command:</strong> <code>control</code></p>
+        <p><strong>Description:</strong> Opens the Control Panel.</p>
+        <button onclick="copyToClipboard('control', this)">Copy Control Panel Command <span class="checkmark" id="controlCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>System Configuration</h3>
+        <p><strong>Command:</strong> <code>msconfig</code></p>
+        <p><strong>Description:</strong> Opens the System Configuration tool.</p>
+        <button onclick="copyToClipboard('msconfig', this)">Copy System Configuration Command <span class="checkmark" id="msconfigCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Performance Monitor</h3>
+        <p><strong>Command:</strong> <code>perfmon</code></p>
+        <p><strong>Description:</strong> Opens the Performance Monitor.</p>
+        <button onclick="copyToClipboard('perfmon', this)">Copy Performance Monitor Command <span class="checkmark" id="perfmonCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Windows Update</h3>
+        <p><strong>Command:</strong> <code>wuapp</code></p>
+        <p><strong>Description:</strong> Opens Windows Update settings.</p>
+        <button onclick="copyToClipboard('wuapp', this)">Copy Windows Update Command <span class="checkmark" id="wuappCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Registry Editor</h3>
+        <p><strong>Command:</strong> <code>regedit</code></p>
+        <p><strong>Description:</strong> Opens the Windows Registry Editor.</p>
+        <button onclick="copyToClipboard('regedit', this)">Copy Registry Editor Command <span class="checkmark" id="regeditCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Disk Cleanup</h3>
+        <p><strong>Command:</strong> <code>cleanmgr</code></p>
+        <p><strong>Description:</strong> Opens the Disk Cleanup tool.</p>
+        <button onclick="copyToClipboard('cleanmgr', this)">Copy Disk Cleanup Command <span class="checkmark" id="cleanmgrCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Windows Security</h3>
+        <p><strong>Command:</strong> <code>windowsdefender:</code></p>
+        <p><strong>Description:</strong> Opens Windows Security settings.</p>
+        <button onclick="copyToClipboard('windowsdefender:', this)">Copy Windows Security Command <span class="checkmark" id="windowsdefenderCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Group Policy Editor (Pro editions)</h3>
+        <p><strong>Command:</strong> <code>gpedit.msc</code></p>
+        <p><strong>Description:</strong> Opens the Group Policy Editor.</p>
+        <button onclick="copyToClipboard('gpedit.msc', this)">Copy Group Policy Editor Command <span class="checkmark" id="gpeditCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Services</h3>
+        <p><strong>Command:</strong> <code>services.msc</code></p>
+        <p><strong>Description:</strong> Opens the Services management console.</p>
+        <button onclick="copyToClipboard('services.msc', this)">Copy Services Command <span class="checkmark" id="servicesCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Windows Memory Diagnostic</h3>
+        <p><strong>Command:</strong> <code>mdsched</code></p>
+        <p><strong>Description:</strong> Opens the Windows Memory Diagnostic tool.</p>
+        <button onclick="copyToClipboard('mdsched', this)">Copy Memory Diagnostic Command <span class="checkmark" id="mdschedCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Resource Monitor</h3>
+        <p><strong>Command:</strong> <code>resmon</code></p>
+        <p><strong>Description:</strong> Opens Resource Monitor for monitoring system performance.</p>
+        <button onclick="copyToClipboard('resmon', this)">Copy Resource Monitor Command <span class="checkmark" id="resmonCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Command Prompt as Administrator</h3>
+        <p><strong>Command:</strong> <code>cmd followed by runas /user:Administrator cmd</code></p>
+        <p><strong>Description:</strong> Opens Command Prompt with administrative privileges.</p>
+        <button onclick="copyToClipboard('cmd && runas /user:Administrator cmd', this)">Copy Admin Command Prompt Command <span class="checkmark" id="adminCmdCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>System Information Utility</h3>
+        <p><strong>Command:</strong> <code>msinfo32</code></p>
+        <p><strong>Description:</strong> Displays comprehensive hardware and software details.</p>
+        <button onclick="copyToClipboard('msinfo32', this)">Copy System Information Utility Command <span class="checkmark" id="msinfo32Check" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Network Connections</h3>
+        <p><strong>Command:</strong> <code>ncpa.cpl</code></p>
+        <p><strong>Description:</strong> Opens Network Connections control panel.</p>
+        <button onclick="copyToClipboard('ncpa.cpl', this)">Copy Network Connections Command <span class="checkmark" id="ncpaCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>Windows Features</h3>
+        <p><strong>Command:</strong> <code>optionalfeatures</code></p>
+        <p><strong>Description:</strong> Opens the Windows Features dialog.</p>
+        <button onclick="copyToClipboard('optionalfeatures', this)">Copy Windows Features Command <span class="checkmark" id="optionalfeaturesCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>DirectX Diagnostic Tool</h3>
+        <p><strong>Command:</strong> <code>dxdiag</code></p>
+        <p><strong>Description:</strong> Opens the DirectX Diagnostic Tool.</p>
+        <button onclick="copyToClipboard('dxdiag', this)">Copy DirectX Diagnostic Command <span class="checkmark" id="dxdiagCheck" style="display: none;">✓</span></button>
+    </div>
+</div>
 
     <h5>By Darryl Rimer | 2025</h5>
 
