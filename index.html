@@ -148,19 +148,27 @@
 </div>
 
     <div>
+    <h3>Nslookup Command</h3>
+    <p><strong>Purpose:</strong> Queries DNS to obtain the domain name or IP address mapping.</p>
+    <p><strong>Usage:</strong> <code>nslookup [domain name]</code> retrieves the IP address for a specified domain.</p>
+    
+    <label for="nslookupInput">Enter Domain Name to generate command:</label>
+    <input type="text" id="nslookupInput" placeholder="e.g. example.com" />
+    
+    <button onclick="generateNslookupCommand()">Submit</button>
+    
+    <div id="nslookupOutputSection" style="display: none;">
+        <code id="nslookupCommand">nslookup example.com</code>
+        <button onclick="copyToClipboard(document.getElementById('nslookupCommand').textContent, this)">Copy Nslookup Command <span class="checkmark" id="nslookupCheck" style="display: none;">✓</span></button>
+    </div>
+</div>
+    
+    <div>
         <h3>Netstat Command</h3>
         <p><strong>Purpose:</strong> Displays active network connections and listening ports.</p>
         <p><strong>Usage:</strong> <code>netstat -ano</code> shows connections with associated Process IDs (PIDs).</p>
         <code id="netstatCommand">netstat -a</code>
         <button onclick="copyToClipboard('netstat -a', this)">Copy Netstat Command <span class="checkmark" id="netstatCheck" style="display: none;">✓</span></button>
-    </div>
-
-    <div>
-        <h3>Nslookup Command</h3>
-        <p><strong>Purpose:</strong> Queries DNS to obtain the domain name or IP address mapping.</p>
-        <p><strong>Usage:</strong> <code>nslookup [domain name]</code> retrieves the IP address for a specified domain.</p>
-        <code id="nslookupCommand">nslookup example.com</code>
-        <button onclick="copyToClipboard('nslookup example.com', this)">Copy Nslookup Command <span class="checkmark" id="nslookupCheck" style="display: none;">✓</span></button>
     </div>
 
     <div>
@@ -411,6 +419,16 @@ window.onload = function() {
         
         // Display the output section
         document.getElementById('tracertOutputSection').style.display = 'block';
+    }
+
+    function generateNslookupCommand() {
+        const input = document.getElementById('nslookupInput').value.trim();
+        const sanitizedInput = input.replace(/\\/g, ''); // Remove backslashes
+        const command = `nslookup ${sanitizedInput || 'example.com'}`; // Default to example.com if input is empty
+        document.getElementById('nslookupCommand').textContent = command; // Update command display
+        
+        // Display the output section
+        document.getElementById('nslookupOutputSection').style.display = 'block';
     }
         
     </script>
