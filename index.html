@@ -42,7 +42,7 @@
             <option value="">--Select a Command--</option>
             <option value="cmd1">DISM /Online /Cleanup-Image /RestoreHealth & sfc /scannow</option>
             <option value="cmd2">Networking Commands</option>
-            <option value="cmd3">Command 3</option>
+            <option value="cmd3">Troubleshooting Windows Update Errors</option>
         </select>
     </div>
     
@@ -141,11 +141,75 @@
 </div>
 
     <div id="cmd3" class="command">
-        <h2>Command 3</h2>
-        <p>This command does DEF.</p>
-        <code>your-command-3-here</code>
-        <button onclick="copyToClipboard('your-command-3-here')">Copy</button>
+    <h2>Troubleshooting Windows Update Errors</h2>
+    <p>Use the following commands to troubleshoot issues related to Windows Updates. These commands stop Windows Update services, delete temporary files, and restore system files to ensure a smooth update process.</p>
+
+    <div>
+        <h3>1. Stop Windows Update Services</h3>
+        <code id="stopWuauservCommand">net stop wuauserv</code>
+        <button onclick="copyToClipboard('net stop wuauserv', this)">Copy Stop Wuauserv Command <span class="checkmark" id="stopWuauservCheck" style="display: none;">✓</span></button>
     </div>
+
+    <div>
+        <h3>2. Stop Cryptographic Services</h3>
+        <code id="stopCryptSvcCommand">net stop cryptSvc</code>
+        <button onclick="copyToClipboard('net stop cryptSvc', this)">Copy Stop CryptSvc Command <span class="checkmark" id="stopCryptSvcCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>3. Stop Background Intelligent Transfer Service</h3>
+        <code id="stopBitsCommand">net stop bits</code>
+        <button onclick="copyToClipboard('net stop bits', this)">Copy Stop BITS Command <span class="checkmark" id="stopBitsCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>4. Stop Windows Installer Service</h3>
+        <code id="stopMsiserverCommand">net stop msiserver</code>
+        <button onclick="copyToClipboard('net stop msiserver', this)">Copy Stop Msiserver Command <span class="checkmark" id="stopMsiserverCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>5. Delete SoftwareDistribution Folder</h3>
+        <code id="deleteSoftwareDistributionCommand">del %windir%\SoftwareDistribution /s /q</code>
+        <button onclick="copyToClipboard('del %windir%\\SoftwareDistribution /s /q', this)">Copy Delete Command <span class="checkmark" id="deleteSoftwareDistributionCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>6. Start Windows Update Services</h3>
+        <code id="startWuauservCommand">net start wuauserv</code>
+        <button onclick="copyToClipboard('net start wuauserv', this)">Copy Start Wuauserv Command <span class="checkmark" id="startWuauservCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>7. Start Cryptographic Services</h3>
+        <code id="startCryptSvcCommand">net start cryptSvc</code>
+        <button onclick="copyToClipboard('net start cryptSvc', this)">Copy Start CryptSvc Command <span class="checkmark" id="startCryptSvcCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>8. Start Background Intelligent Transfer Service</h3>
+        <code id="startBitsCommand">net start bits</code>
+        <button onclick="copyToClipboard('net start bits', this)">Copy Start BITS Command <span class="checkmark" id="startBitsCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>9. Start Windows Installer Service</h3>
+        <code id="startMsiserverCommand">net start msiserver</code>
+        <button onclick="copyToClipboard('net start msiserver', this)">Copy Start Msiserver Command <span class="checkmark" id="startMsiserverCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>10. Repair Windows Image</h3>
+        <code id="dismCommand">DISM /Online /Cleanup-Image /RestoreHealth</code>
+        <button onclick="copyToClipboard('DISM /Online /Cleanup-Image /RestoreHealth', this)">Copy DISM Command <span class="checkmark" id="dismCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>11. Verify System Files</h3>
+        <code id="sfcCommand">sfc /scannow</code>
+        <button onclick="copyToClipboard('sfc /scannow', this)">Copy SFC Command <span class="checkmark" id="sfcCheck" style="display: none;">✓</span></button>
+    </div>
+</div>
 
  <h5>By Darryl Rimer | 2025</h5>
 
