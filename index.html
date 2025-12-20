@@ -116,20 +116,36 @@
     </div>
 
     <div>
-        <h3>Ping Command</h3>
-        <p><strong>Purpose:</strong> Tests connectivity between your computer and another network device.</p>
-        <p><strong>Usage:</strong> <code>ping [hostname/IP]</code> sends packets to the specified address to check if it’s reachable.</p>
+    <h3>Ping Command</h3>
+    <p><strong>Purpose:</strong> Tests connectivity between your computer and another network device.</p>
+    <p><strong>Usage:</strong> <code>ping [hostname/IP]</code> sends packets to the specified address to check if it’s reachable.</p>
+    
+    <label for="pingInput">Enter IP Address or URL to generate command:</label>
+    <input type="text" id="pingInput" placeholder="e.g. google.com" />
+    
+    <button onclick="generatePingCommand()">Submit</button>
+    
+    <div id="outputSection" style="display: none;">
         <code id="pingCommand">ping google.com</code>
-        <button onclick="copyToClipboard('ping google.com', this)">Copy Ping Command <span class="checkmark" id="pingCheck" style="display: none;">✓</span></button>
+        <button onclick="copyToClipboard(document.getElementById('pingCommand').textContent, this)">Copy Ping Command <span class="checkmark" id="pingCheck" style="display: none;">✓</span></button>
     </div>
+</div>
 
     <div>
-        <h3>Tracert Command</h3>
-        <p><strong>Purpose:</strong> Traces the route packets take to a specified destination.</p>
-        <p><strong>Usage:</strong> <code>tracert [hostname/IP]</code> shows each hop along the route to the target.</p>
+    <h3>Tracert Command</h3>
+    <p><strong>Purpose:</strong> Traces the route packets take to a specified destination.</p>
+    <p><strong>Usage:</strong> <code>tracert [hostname/IP]</code> shows each hop along the route to the target.</p>
+    
+    <label for="tracertInput">Enter IP Address or URL to generate command:</label>
+    <input type="text" id="tracertInput" placeholder="e.g. google.com" />
+    
+    <button onclick="generateTracertCommand()">Submit</button>
+    
+    <div id="tracertOutputSection" style="display: none;">
         <code id="tracertCommand">tracert google.com</code>
-        <button onclick="copyToClipboard('tracert google.com', this)">Copy Tracert Command <span class="checkmark" id="tracertCheck" style="display: none;">✓</span></button>
+        <button onclick="copyToClipboard(document.getElementById('tracertCommand').textContent, this)">Copy Tracert Command <span class="checkmark" id="tracertCheck" style="display: none;">✓</span></button>
     </div>
+</div>
 
     <div>
         <h3>Netstat Command</h3>
@@ -376,6 +392,27 @@ window.onload = function() {
                 checkmark.style.display = 'none';
             }, 2000);
         }
+
+        function generatePingCommand() {
+        const input = document.getElementById('pingInput').value.trim();
+        const sanitizedInput = input.replace(/\\/g, ''); // Remove backslashes
+        const command = `ping ${sanitizedInput || 'google.com'}`; // Default to google.com if input is empty
+        document.getElementById('pingCommand').textContent = command; // Update command display
+        
+        // Display the output section
+        document.getElementById('outputSection').style.display = 'block';
+    }
+
+        function generateTracertCommand() {
+        const input = document.getElementById('tracertInput').value.trim();
+        const sanitizedInput = input.replace(/\\/g, ''); // Remove backslashes
+        const command = `tracert ${sanitizedInput || 'google.com'}`; // Default to google.com if input is empty
+        document.getElementById('tracertCommand').textContent = command; // Update command display
+        
+        // Display the output section
+        document.getElementById('tracertOutputSection').style.display = 'block';
+    }
+        
     </script>
 </body>
 </html>
