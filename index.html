@@ -41,7 +41,7 @@
         <select id="commands" onchange="showCommand()">
             <option value="">--Select a Command--</option>
             <option value="cmd1">DISM /Online /Cleanup-Image /RestoreHealth & sfc /scannow</option>
-            <option value="cmd2">Command 2</option>
+            <option value="cmd2">Networking Commands</option>
             <option value="cmd3">Command 3</option>
         </select>
     </div>
@@ -64,11 +64,81 @@
 </div>
     
     <div id="cmd2" class="command">
-        <h2>Command 2</h2>
-        <p>This command does ABC.</p>
-        <code>your-command-2-here</code>
-        <button onclick="copyToClipboard('your-command-2-here')">Copy</button>
+    <h2>Networking Commands</h2>
+    <p>The command prompt commands related to networking are powerful tools for managing, testing, and troubleshooting network configurations. Here’s a breakdown of some common network commands in Windows, along with their purposes:</p>
+
+    <div>
+        <h3>1. IP Configuration</h3>
+        <p><strong>Purpose:</strong> Displays the current IP configuration for all network interfaces.</p>
+        <p><strong>Usage:</strong> <code>ipconfig /all</code> shows detailed information including the IP address, subnet mask, and default gateway.</p>
+        <code id="ipconfigCommand">ipconfig /all</code>
+        <button onclick="copyToClipboard('ipconfig /all', this)">Copy IP Configuration <span class="checkmark" id="ipconfigCheck" style="display: none;">✓</span></button>
     </div>
+    
+    <div>
+        <h3>2. Flush DNS</h3>
+        <p><strong>Purpose:</strong> Clears the DNS resolver cache to resolve DNS-related issues.</p>
+        <p><strong>Usage:</strong> <code>ipconfig /flushdns</code> clears the DNS cache, which can help fix problems accessing websites.</p>
+        <code id="flushdnsCommand">ipconfig /flushdns</code>
+        <button onclick="copyToClipboard('ipconfig /flushdns', this)">Copy Flush DNS Command <span class="checkmark" id="flushdnsCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>3. Ping Command</h3>
+        <p><strong>Purpose:</strong> Tests connectivity between your computer and another network device.</p>
+        <p><strong>Usage:</strong> <code>ping [hostname/IP]</code> sends packets to the specified address to check if it’s reachable.</p>
+        <code id="pingCommand">ping google.com</code>
+        <button onclick="copyToClipboard('ping google.com', this)">Copy Ping Command <span class="checkmark" id="pingCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>4. Tracert Command</h3>
+        <p><strong>Purpose:</strong> Traces the route packets take to a specified destination.</p>
+        <p><strong>Usage:</strong> <code>tracert [hostname/IP]</code> shows each hop along the route to the target.</p>
+        <code id="tracertCommand">tracert google.com</code>
+        <button onclick="copyToClipboard('tracert google.com', this)">Copy Tracert Command <span class="checkmark" id="tracertCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>5. Netstat Command</h3>
+        <p><strong>Purpose:</strong> Displays active network connections and listening ports.</p>
+        <p><strong>Usage:</strong> <code>netstat -ano</code> shows connections with associated Process IDs (PIDs).</p>
+        <code id="netstatCommand">netstat -a</code>
+        <button onclick="copyToClipboard('netstat -a', this)">Copy Netstat Command <span class="checkmark" id="netstatCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>6. Nslookup Command</h3>
+        <p><strong>Purpose:</strong> Queries DNS to obtain the domain name or IP address mapping.</p>
+        <p><strong>Usage:</strong> <code>nslookup [domain name]</code> retrieves the IP address for a specified domain.</p>
+        <code id="nslookupCommand">nslookup example.com</code>
+        <button onclick="copyToClipboard('nslookup example.com', this)">Copy Nslookup Command <span class="checkmark" id="nslookupCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>7. Route Command</h3>
+        <p><strong>Purpose:</strong> Displays and modifies the IP routing table.</p>
+        <p><strong>Usage:</strong> <code>route print</code> shows current network routes; <code>route add [destination] [mask] [gateway]</code> creates a new route.</p>
+        <code id="routeCommand">route print</code>
+        <button onclick="copyToClipboard('route print', this)">Copy Route Command <span class="checkmark" id="routeCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>8. ARP Command</h3>
+        <p><strong>Purpose:</strong> Displays and modifies the ARP (Address Resolution Protocol) cache.</p>
+        <p><strong>Usage:</strong> <code>arp -a</code> shows the current ARP entries.</p>
+        <code id="arpCommand">arp -a</code>
+        <button onclick="copyToClipboard('arp -a', this)">Copy ARP Command <span class="checkmark" id="arpCheck" style="display: none;">✓</span></button>
+    </div>
+
+    <div>
+        <h3>9. Netsh Command</h3>
+        <p><strong>Purpose:</strong> A versatile command for managing network configurations.</p>
+        <p><strong>Usage:</strong> <code>netsh interface show interface</code> displays the status of network interfaces.</p>
+        <code id="netshCommand">netsh interface show interface</code>
+        <button onclick="copyToClipboard('netsh interface show interface', this)">Copy Netsh Command <span class="checkmark" id="netshCheck" style="display: none;">✓</span></button>
+    </div>
+</div>
 
     <div id="cmd3" class="command">
         <h2>Command 3</h2>
@@ -107,7 +177,7 @@
         const checkmark = button.querySelector('.checkmark');
         checkmark.style.display = 'inline';
         
-        // Optional: Hide the checkmark after 2 seconds
+        // Hide the checkmark after 2 seconds
         setTimeout(() => {
             checkmark.style.display = 'none';
         }, 2000);
